@@ -23,9 +23,12 @@ data class Product(
 
 class OrderRepository {
     fun getOrderById(id: Int): Order {
-        return Order(1, OrderStatus.COMPLETED, listOf(Product(1, "quail egg", 222.2),
-                                                         Product(2, "coconut milk", 333.3),
-                                                         Product(3, "olive oil", 444.4)), "prospekt Mira house 23 apartment 23")
+        val products = listOf(
+            Product(1, "quail egg", 222.2),
+            Product(2, "coconut milk", 333.3),
+            Product(3, "olive oil", 444.4)
+        )
+        return Order(1, OrderStatus.COMPLETED, products, "prospekt Mira house 23 apartment 23")
     }
 }
 
